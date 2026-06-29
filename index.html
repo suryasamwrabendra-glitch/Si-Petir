@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SI PETIR — Sistem Prediksi Elektrik Terintegrasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══ BACKGROUND ══════════════════════════════════════════════ -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ══ WATERMARK ════════════════════════════════════════════════ -->
+  <div class="watermark" aria-hidden="true">SAMBAR</div>
+
+  <!-- ══ APP SHELL ════════════════════════════════════════════════ -->
+  <div class="app-shell">
+
+    <!-- ── SIDEBAR ─────────────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-bolt">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="boltG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#B06AFF"/>
+                <stop offset="100%" stop-color="#F5C842"/>
+              </linearGradient>
+            </defs>
+            <polygon points="18,3 8,18 16,18 14,29 24,14 16,14" fill="url(#boltG)"/>
+          </svg>
+        </div>
+        <div class="brand-copy">
+          <span class="brand-name">SI PETIR</span>
+          <span class="brand-sub">Prediksi Elektrik Terintegrasi</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" role="navigation" aria-label="Pipeline Steps">
+        <button class="nav-step active" data-step="0" aria-current="true">
+          <span class="step-icon">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="step-meta">
+            <span class="step-num">01</span>
+            <span class="step-title">Akuisisi Data</span>
+          </span>
+          <span class="step-dot"></span>
+        </button>
+
+        <button class="nav-step" data-step="1">
+          <span class="step-icon">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M3 6h14M3 10h10M3 14h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="step-meta">
+            <span class="step-num">02</span>
+            <span class="step-title">Pembersihan Sinyal</span>
+          </span>
+          <span class="step-dot"></span>
+        </button>
+
+        <button class="nav-step" data-step="2">
+          <span class="step-icon">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v3M10 15v3M2 10h3M15 10h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="step-meta">
+            <span class="step-num">03</span>
+            <span class="step-title">Jaringan Saraf ANN</span>
+          </span>
+          <span class="step-dot"></span>
+        </button>
+
+        <button class="nav-step" data-step="3">
+          <span class="step-icon">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M7 10l2.5 2.5L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <span class="step-meta">
+            <span class="step-num">04</span>
+            <span class="step-title">Validasi Model</span>
+          </span>
+          <span class="step-dot"></span>
+        </button>
+
+        <button class="nav-step" data-step="4">
+          <span class="step-icon">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h5M11 10h5M10 4v5M10 11v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="step-meta">
+            <span class="step-num">05</span>
+            <span class="step-title">Transmisi Dual Jalur</span>
+          </span>
+          <span class="step-dot"></span>
+        </button>
+
+        <button class="nav-step" data-step="5">
+          <span class="step-icon">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M10 2c-4.4 0-8 3.58-8 8 0 5.6 8 10 8 10s8-4.4 8-10c0-4.42-3.58-8-8-8z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <span class="step-meta">
+            <span class="step-num">06</span>
+            <span class="step-title">Routing Armada</span>
+          </span>
+          <span class="step-dot"></span>
+        </button>
+
+        <button class="nav-step" data-step="6">
+          <span class="step-icon">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M11.7 5.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0L17 5.7A5 5 0 0110.4 12l-5.7 5.7a1.5 1.5 0 01-2.1-2.1L8.3 10A5 5 0 0114 3.3L11.7 5.3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="step-meta">
+            <span class="step-num">07</span>
+            <span class="step-title">Eksekusi Lapangan</span>
+          </span>
+          <span class="step-dot"></span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="system-status">
+          <span class="status-dot live"></span>
+          <span>Sistem Aktif</span>
+        </div>
+        <div class="imk-count">
+          <span id="sidebar-imk">1.247</span>
+          <span class="imk-label">unit dipantau</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── MAIN CONTENT ──────────────────────────────────────────── -->
+    <div class="main-content">
+
+      <!-- HEADER BAR -->
+      <header class="topbar glass-card">
+        <div class="topbar-left">
+          <h1 class="topbar-title">Pipeline Sistem</h1>
+          <p class="topbar-sub">Deteksi Dini. Selamatkan Modal.</p>
+        </div>
+        <div class="topbar-right">
+          <div class="live-badge">
+            <span class="pulse-dot"></span>
+            <span id="flagged-badge">34 Peringatan</span>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle tema">
+            <svg class="icon-sun" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg class="icon-moon" viewBox="0 0 20 20" fill="none"><path d="M17.5 12.5A7.5 7.5 0 017.5 2.5a7.5 7.5 0 100 15 7.5 7.5 0 0010-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- HERO STAT STRIP -->
+      <section class="stat-strip" aria-label="Statistik Utama">
+        <div class="stat-card glass-card">
+          <div class="stat-val" data-countup="134025" id="stat-imk">134.025</div>
+          <div class="stat-label">IMK di DI Yogyakarta</div>
+        </div>
+        <div class="stat-card glass-card highlight">
+          <div class="stat-val gold">1,94%</div>
+          <div class="stat-label">jangkauan Si Keling/tahun</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-val">33,28</div>
+          <div class="stat-label">unit per 1.000 penduduk — densitas nasional tertinggi</div>
+        </div>
+        <div class="stat-card glass-card highlight-violet">
+          <div class="stat-val violet">91%</div>
+          <div class="stat-label">akurasi deteksi AI SI PETIR</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-val gold">24,2%</div>
+          <div class="stat-label">internet Gunungkidul — jalur offline wajib</div>
+        </div>
+      </section>
+
+      <!-- PIPELINE PANELS -->
+      <div class="panels-wrapper" id="panelsWrapper">
+
+        <!-- STEP 0: Akuisisi Data -->
+        <section class="panel active" id="panel-0" role="tabpanel">
+          <div class="panel-header">
+            <span class="panel-eyebrow">Langkah 01</span>
+            <h2 class="panel-title">Akuisisi Data &amp; Normalisasi</h2>
+            <p class="panel-desc">Sensor menyadap sinyal arus listrik dari motor mesin IMK setiap <strong>300ms</strong>. Data mentah difilter dari derau elektrikal jaringan PLN sebelum diproses lebih lanjut.</p>
+          </div>
+          <div class="panel-body">
+            <div class="glass-card wave-card">
+              <div class="wave-label">
+                <span class="dot gold"></span> Sinyal Mentah — <em>raw, berisik</em>
+              </div>
+              <canvas id="rawCanvas" class="wave-canvas"></canvas>
+              <div class="wave-label" style="margin-top:18px">
+                <span class="dot violet"></span> Sinyal Bersih — <em>ternormalisasi</em>
+              </div>
+              <canvas id="cleanCanvas" class="wave-canvas"></canvas>
+              <div class="wave-ticker">
+                <span class="ticker-pulse"></span>
+                Membaca setiap <strong>300ms</strong> — <span id="sampleCount">0</span> sampel sesi ini
+              </div>
+            </div>
+            <div class="info-stack">
+              <div class="glass-card info-card">
+                <div class="info-num" id="sensorHz">3,3</div>
+                <div class="info-label">Hz — frekuensi sampling</div>
+              </div>
+              <div class="glass-card info-card gold-card">
+                <div class="info-num gold">300<small>ms</small></div>
+                <div class="info-label">interval pembacaan</div>
+              </div>
+              <div class="glass-card info-card">
+                <div class="info-num">5</div>
+                <div class="info-label">fitur per rekaman</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 1: Pembersihan Sinyal -->
+        <section class="panel" id="panel-1" role="tabpanel">
+          <div class="panel-header">
+            <span class="panel-eyebrow">Langkah 02</span>
+            <h2 class="panel-title">Transposisi Fitur &amp; Separasi Sinyal</h2>
+            <p class="panel-desc">Data diubah menjadi rekaman per <strong>10 putaran motor</strong>. Sistem memisahkan gangguan jaringan PLN dari sinyal degradasi fisik mesin.</p>
+          </div>
+          <div class="panel-body">
+            <div class="split-signals">
+              <div class="glass-card signal-half noise-side">
+                <div class="sig-label"><span class="dot gold"></span> Gangguan PLN</div>
+                <canvas id="noiseCanvas" class="signal-canvas"></canvas>
+                <span class="sig-tag filtered">DIFILTER</span>
+              </div>
+              <div class="split-arrow">→</div>
+              <div class="glass-card signal-half machine-side">
+                <div class="sig-label"><span class="dot violet"></span> Degradasi Mesin</div>
+                <canvas id="machineCanvas" class="signal-canvas"></canvas>
+                <span class="sig-tag processed">INPUT ANN</span>
+              </div>
+            </div>
+            <div class="feature-chips">
+              <span class="chip">Amplitudo Arus</span>
+              <span class="chip">Frekuensi Osilasi</span>
+              <span class="chip">Deviasi Fase</span>
+              <span class="chip">Harmonik ke-3</span>
+              <span class="chip">RMS Error</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 2: Neural Network -->
+        <section class="panel" id="panel-2" role="tabpanel">
+          <div class="panel-header">
+            <span class="panel-eyebrow">Langkah 03</span>
+            <h2 class="panel-title">Jaringan Saraf Tiruan ANN-BPN</h2>
+            <p class="panel-desc">Model dengan arsitektur <strong>3-3-1</strong> menganalisis degradasi kumparan motor. Forward pass mensimulasikan aliran data dari input ke prediksi.</p>
+          </div>
+          <div class="panel-body">
+            <div class="glass-card nn-container">
+              <svg id="nnSvg" class="nn-svg" aria-label="Diagram Jaringan Saraf"></svg>
+              <div class="nn-legend">
+                <span><span class="dot violet"></span> Input (Fitur Arus)</span>
+                <span><span class="dot violet-soft"></span> Tersembunyi (BPN)</span>
+                <span><span class="dot gold"></span> Output (Prediksi RUL)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 3: Validasi Model -->
+        <section class="panel" id="panel-3" role="tabpanel">
+          <div class="panel-header">
+            <span class="panel-eyebrow">Langkah 04</span>
+            <h2 class="panel-title">Validasi Independen &amp; Minimasi Error</h2>
+            <p class="panel-desc">Model divalidasi dengan data uji independen. Target: akurasi <strong>≥ 91%</strong> dan MSE <strong>≤ 0,01</strong>.</p>
+          </div>
+          <div class="panel-body validation-body">
+            <div class="glass-card gauge-card">
+              <svg id="gaugeSvg" viewBox="0 0 220 130" class="gauge-svg" aria-label="Gauge akurasi">
+                <defs>
+                  <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#7B2FFF"/>
+                    <stop offset="100%" stop-color="#F5C842"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 22 110 A 88 88 0 0 1 198 110" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="16" stroke-linecap="round"/>
+                <path id="gaugeFill" d="M 22 110 A 88 88 0 0 1 198 110" fill="none" stroke="url(#gaugeGrad)" stroke-width="16" stroke-linecap="round" stroke-dasharray="0 276"/>
+                <text x="110" y="100" text-anchor="middle" class="gauge-num" id="gaugeText">0%</text>
+                <text x="110" y="120" text-anchor="middle" class="gauge-sub">Akurasi Deteksi</text>
+              </svg>
+            </div>
+            <div class="glass-card mse-card">
+              <div class="mse-title">Mean Squared Error</div>
+              <div class="mse-bar-wrap">
+                <div class="mse-bar-bg">
+                  <div class="mse-bar-fill" id="mseFill" style="width:0%"></div>
+                </div>
+                <div class="mse-ticks"><span>0.00</span><span>0.01</span><span>0.05</span><span>0.10</span></div>
+              </div>
+              <div class="mse-readout">
+                MSE = <strong id="mseVal">0.0000</strong>
+                <span class="mse-check">Target ≤ 0.01 ✓</span>
+              </div>
+              <div class="validated-badge" id="validBadge">✓ TERVALIDASI</div>
+            </div>
+            <div class="glass-card table-card">
+              <div class="table-title">Ringkasan Performa Kelas</div>
+              <div class="perf-table">
+                <div class="pt-row header"><span>Kelas</span><span>Precision</span><span>Recall</span><span>F1</span></div>
+                <div class="pt-row"><span>Normal</span><span class="gold">0.94</span><span class="gold">0.93</span><span class="gold">0.93</span></div>
+                <div class="pt-row"><span>Degradasi Awal</span><span class="gold">0.89</span><span class="gold">0.90</span><span class="gold">0.89</span></div>
+                <div class="pt-row"><span>Kritis</span><span class="gold">0.91</span><span class="gold">0.91</span><span class="gold">0.91</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 4: Dual Pathway -->
+        <section class="panel" id="panel-4" role="tabpanel">
+          <div class="panel-header">
+            <span class="panel-eyebrow">Langkah 05</span>
+            <h2 class="panel-title">Transmisi Dual Jalur</h2>
+            <p class="panel-desc">Sistem mengirim peringatan melalui dua jalur paralel. Jalur B bukan cadangan — ini <strong>kebutuhan nyata</strong> bagi 24.843 IMK tanpa koneksi internet di Gunungkidul.</p>
+          </div>
+          <div class="panel-body">
+            <div class="path-source glass-card">
+              <div class="ps-icon">⚙️</div>
+              <div class="ps-label">Mesin IMK</div>
+              <div class="ps-rul">RUL <span class="gold" id="rulVal">67%</span> <span class="rul-warn">⚠ PERHATIAN</span></div>
+            </div>
+            <div class="pathways-grid">
+              <div class="glass-card pathway pathway-a">
+                <div class="pw-badge violet-badge">JALUR A</div>
+                <div class="pw-title">Online — Push Notification</div>
+                <div class="pw-sub">Untuk area dengan konektivitas internet</div>
+                <div class="pw-steps">
+                  <div class="pw-step"><span>📱</span> Notifikasi push ke pemilik IMK</div>
+                  <div class="pw-arrow-sm">↓</div>
+                  <div class="pw-step"><span>🚐</span> Dispatch otomatis armada Si Keling</div>
+                  <div class="pw-arrow-sm">↓</div>
+                  <div class="pw-step"><span>📍</span> GPS routing ke teknisi terdekat</div>
+                </div>
+                <div class="pw-coverage">
+                  <div class="cov-bar"><div class="cov-fill violet-fill" style="width:75.8%"></div></div>
+                  <span>75,8% wilayah DIY</span>
+                </div>
+              </div>
+
+              <div class="glass-card pathway pathway-b gold-glow-pulse">
+                <div class="pw-badge gold-badge">JALUR B</div>
+                <div class="pw-title">Semi-Offline — Lokal Sinkron</div>
+                <div class="pw-sub gold">⚠ Wajib untuk Gunungkidul — hanya 24,2% internet</div>
+                <div class="pw-steps">
+                  <div class="pw-step"><span>🔔</span> Alarm fisik berbunyi di lokasi mesin</div>
+                  <div class="pw-arrow-sm">↓</div>
+                  <div class="pw-step"><span>📶</span> Sinkronisasi via Bluetooth lokal</div>
+                  <div class="pw-arrow-sm">↓</div>
+                  <div class="pw-step"><span>🏛️</span> Laporan diteruskan ke kantor Kelurahan</div>
+                </div>
+                <div class="pw-coverage">
+                  <div class="cov-bar"><div class="cov-fill gold-fill" style="width:24.2%"></div></div>
+                  <span class="gold">24,2% — 24.843 IMK tanpa internet</span>
+                </div>
+                <div class="pw-note">Jalur B bukan cadangan — ini kebutuhan nyata</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 5: Routing Armada -->
+        <section class="panel" id="panel-5" role="tabpanel">
+          <div class="panel-header">
+            <span class="panel-eyebrow">Langkah 06</span>
+            <h2 class="panel-title">Koordinasi Rute Armada Si Keling</h2>
+            <p class="panel-desc">Sistem merutekan teknisi Si Keling terdekat secara otomatis ke mesin yang berperingatan. Pemerintah memvalidasi lokasi GPS darurat.</p>
+          </div>
+          <div class="panel-body map-body">
+            <div class="glass-card map-wrap">
+              <svg id="diySvg" viewBox="0 0 520 280" class="diy-map" aria-label="Peta DIY">
+                <defs>
+                  <radialGradient id="mapGlow2"><stop offset="0%" stop-color="#7B2FFF" stop-opacity="0.14"/><stop offset="100%" stop-color="#0D0818" stop-opacity="0"/></radialGradient>
+                </defs>
+                <rect width="520" height="280" fill="#080414" rx="18"/>
+                <line x1="0" y1="70" x2="520" y2="70" stroke="rgba(123,47,255,0.1)" stroke-width="0.5"/>
+                <line x1="0" y1="140" x2="520" y2="140" stroke="rgba(123,47,255,0.1)" stroke-width="0.5"/>
+                <line x1="0" y1="210" x2="520" y2="210" stroke="rgba(123,47,255,0.1)" stroke-width="0.5"/>
+                <line x1="130" y1="0" x2="130" y2="280" stroke="rgba(123,47,255,0.1)" stroke-width="0.5"/>
+                <line x1="260" y1="0" x2="260" y2="280" stroke="rgba(123,47,255,0.1)" stroke-width="0.5"/>
+                <line x1="390" y1="0" x2="390" y2="280" stroke="rgba(123,47,255,0.1)" stroke-width="0.5"/>
+                <!-- Kabupaten -->
+                <ellipse cx="82" cy="130" rx="62" ry="84" fill="rgba(123,47,255,0.08)" stroke="rgba(123,47,255,0.2)" stroke-width="0.8"/>
+                <text x="82" y="133" text-anchor="middle" fill="rgba(240,236,255,0.4)" font-family="Plus Jakarta Sans" font-size="8.5">Kulon Progo</text>
+                <ellipse cx="210" cy="158" rx="68" ry="80" fill="rgba(123,47,255,0.07)" stroke="rgba(123,47,255,0.16)" stroke-width="0.8"/>
+                <text x="210" y="161" text-anchor="middle" fill="rgba(240,236,255,0.4)" font-family="Plus Jakarta Sans" font-size="8.5">Bantul</text>
+                <ellipse cx="228" cy="82" rx="32" ry="30" fill="rgba(123,47,255,0.15)" stroke="rgba(176,106,255,0.3)" stroke-width="0.8"/>
+                <text x="228" y="80" text-anchor="middle" fill="rgba(240,236,255,0.55)" font-family="Plus Jakarta Sans" font-size="8">Kota</text>
+                <text x="228" y="90" text-anchor="middle" fill="rgba(240,236,255,0.55)" font-family="Plus Jakarta Sans" font-size="8">Yogya</text>
+                <ellipse cx="290" cy="72" rx="82" ry="58" fill="rgba(123,47,255,0.08)" stroke="rgba(123,47,255,0.16)" stroke-width="0.8"/>
+                <text x="290" y="68" text-anchor="middle" fill="rgba(240,236,255,0.4)" font-family="Plus Jakarta Sans" font-size="8.5">Sleman</text>
+                <!-- Gunungkidul — gold -->
+                <ellipse cx="400" cy="165" rx="105" ry="90" fill="rgba(245,200,66,0.06)" stroke="rgba(245,200,66,0.28)" stroke-width="1.2"/>
+                <text x="400" y="156" text-anchor="middle" fill="rgba(245,200,66,0.75)" font-family="Plus Jakarta Sans" font-size="9" font-weight="600">Gunungkidul</text>
+                <text x="400" y="170" text-anchor="middle" fill="rgba(245,200,66,0.5)" font-family="Plus Jakarta Sans" font-size="7.5">24,2% internet</text>
+                <!-- Road -->
+                <path d="M82 130 Q160 110 228 82 Q270 72 345 95 Q395 115 440 140" fill="none" stroke="rgba(176,106,255,0.14)" stroke-width="2" stroke-dasharray="7 4"/>
+                <!-- Machine pin -->
+                <circle id="machineRing" cx="210" cy="148" r="14" fill="rgba(245,200,66,0.18)"/>
+                <circle cx="210" cy="148" r="7" fill="#F5C842"/>
+                <text x="210" y="152" text-anchor="middle" fill="#0D0818" font-family="Plus Jakarta Sans" font-size="9" font-weight="800">!</text>
+                <text x="210" y="133" text-anchor="middle" fill="#F5C842" font-family="Plus Jakarta Sans" font-size="7.5">Mesin Bermasalah</text>
+                <!-- Technician -->
+                <g id="techGroup">
+                  <circle cx="330" cy="78" r="10" fill="rgba(176,106,255,0.22)"/>
+                  <circle cx="330" cy="78" r="5.5" fill="#B06AFF"/>
+                  <text x="330" y="82" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans" font-size="8" font-weight="700">T</text>
+                </g>
+                <text x="330" y="64" text-anchor="middle" fill="#B06AFF" font-family="Plus Jakarta Sans" font-size="7.5">Si Keling</text>
+                <!-- Route -->
+                <path id="routePath" d="M330 78 Q270 100 210 148" fill="none" stroke="#B06AFF" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.7"/>
+              </svg>
+              <div class="eta-overlay glass-card">
+                <div class="eta-label">ETA Teknisi</div>
+                <div class="eta-val" id="etaDisplay">12:47</div>
+                <div class="eta-sub">menit:detik</div>
+              </div>
+            </div>
+            <div class="map-sidebar">
+              <div class="glass-card dispatch-mini">
+                <div class="dm-val">8</div>
+                <div class="dm-label">Dispatch Hari Ini</div>
+              </div>
+              <div class="glass-card dispatch-mini">
+                <div class="dm-val violet">5</div>
+                <div class="dm-label">Teknisi Aktif</div>
+              </div>
+              <div class="glass-card dispatch-queue">
+                <div class="dq-title">Antrian Aktif</div>
+                <div class="dq-item"><span class="dot gold pulsing"></span> Bantul-07 → 8 mnt</div>
+                <div class="dq-item"><span class="dot violet pulsing"></span> Sleman-03 → 14 mnt</div>
+                <div class="dq-item"><span class="dot violet pulsing"></span> KP-02 → 22 mnt</div>
+              </div>
+              <div class="glass-card coverage-card">
+                <div class="cov-label">Jangkauan vs Baseline</div>
+                <div class="cov-bar"><div class="cov-fill violet-fill" id="covBar" style="width:0%"></div></div>
+                <div class="cov-stats">
+                  <span class="gold">1,94% baseline</span>
+                  <span class="violet" id="covVal">−</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 6: Eksekusi Lapangan -->
+        <section class="panel" id="panel-6" role="tabpanel">
+          <div class="panel-header">
+            <span class="panel-eyebrow">Langkah 07</span>
+            <h2 class="panel-title">Eksekusi Layanan Lapangan</h2>
+            <p class="panel-desc">Teknisi memperbaiki mesin <strong>sebelum total breakdown</strong>. Pemilik IMK terhindar dari kerugian modal kerja yang mengancam kelangsungan usaha.</p>
+          </div>
+          <div class="panel-body">
+            <div class="ba-grid">
+              <div class="glass-card ba-card before-card">
+                <div class="ba-badge gold-badge-sm">SEBELUM</div>
+                <div class="ba-emoji">⚙️</div>
+                <div class="health-row">
+                  <span class="health-label">Kondisi</span>
+                  <div class="health-bar"><div class="hb-fill gold-fill" style="width:35%"></div></div>
+                  <span class="gold">35% KRITIS</span>
+                </div>
+                <div class="ba-stats">
+                  <div class="bas"><span>RUL</span><span class="gold">67% tersisa</span></div>
+                  <div class="bas"><span>Efisiensi</span><span class="gold">-18% boros</span></div>
+                  <div class="bas"><span>Estimasi Breakdown</span><span class="gold">~3 hari</span></div>
+                </div>
+                <div class="cost-box cost-warn">
+                  <div class="cost-label">Estimasi Kerugian</div>
+                  <div class="cost-val">Rp 4.500.000</div>
+                  <div class="cost-sub">downtime + darurat + kehilangan produksi</div>
+                </div>
+              </div>
+
+              <div class="ba-middle">
+                <div class="glass-card intervention-pill">
+                  <span>🔧</span>
+                  <span>Intervensi Si Keling</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <div class="glass-card ba-card after-card">
+                <div class="ba-badge green-badge-sm">SESUDAH</div>
+                <div class="ba-emoji">✅</div>
+                <div class="health-row">
+                  <span class="health-label">Kondisi</span>
+                  <div class="health-bar"><div class="hb-fill violet-fill" id="healthBar" style="width:0%"></div></div>
+                  <span class="violet" id="healthPct">0% —</span>
+                </div>
+                <div class="ba-stats">
+                  <div class="bas"><span>RUL</span><span class="violet">100% — diperbarui</span></div>
+                  <div class="bas"><span>Efisiensi</span><span class="violet">Normal</span></div>
+                  <div class="bas"><span>Perkiraan Operasi</span><span class="violet">+18 bulan</span></div>
+                </div>
+                <div class="cost-box cost-save">
+                  <div class="cost-label">Modal Diselamatkan</div>
+                  <div class="cost-val violet" id="savingAmt">Rp 0</div>
+                  <div class="cost-sub">servis preventif jauh lebih murah</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="impact-strip">
+              <div class="glass-card impact-item">
+                <div class="impact-val">134.025</div>
+                <div class="impact-sub">IMK berpotensi terlindungi</div>
+              </div>
+              <div class="glass-card impact-item">
+                <div class="impact-val violet">+97%</div>
+                <div class="impact-sub">peningkatan jangkauan vs Si Keling saja</div>
+              </div>
+              <div class="glass-card impact-item">
+                <div class="impact-val gold">0,429</div>
+                <div class="impact-sub">Gini DIY — dijawab SI PETIR</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /panels-wrapper -->
+
+      <!-- DASHBOARD FOOTER -->
+      <section class="dashboard-bar" aria-label="Dasbor Ringkasan">
+        <div class="glass-card dash-card">
+          <div class="dash-icon">🏭</div>
+          <div class="dash-num" id="dash-imk">1.247</div>
+          <div class="dash-lbl">IMK Dipantau</div>
+          <div class="dash-trend up">↑ 23 hari ini</div>
+        </div>
+        <div class="glass-card dash-card warn-card">
+          <div class="dash-icon">⚠️</div>
+          <div class="dash-num" id="dash-flagged">34</div>
+          <div class="dash-lbl">Peringatan Minggu Ini</div>
+          <div class="dash-trend warn">12 sedang ditangani</div>
+        </div>
+        <div class="glass-card dash-card">
+          <div class="dash-icon">🚐</div>
+          <div class="dash-num">8</div>
+          <div class="dash-lbl">Dispatch Hari Ini</div>
+          <div class="dash-trend up">3 selesai, 5 en route</div>
+        </div>
+        <div class="glass-card dash-card green-card">
+          <div class="dash-icon">📈</div>
+          <div class="dash-num">43,7%</div>
+          <div class="dash-lbl">Estimasi Jangkauan dengan SI PETIR</div>
+          <div class="dash-trend up">↑ dari 1,94% baseline</div>
+        </div>
+      </section>
+
+    </div><!-- /main-content -->
+  </div><!-- /app-shell -->
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="bottom-nav glass-card" aria-label="Pipeline Mobile">
+    <button class="bnav-btn active" data-step="0">01</button>
+    <button class="bnav-btn" data-step="1">02</button>
+    <button class="bnav-btn" data-step="2">03</button>
+    <button class="bnav-btn" data-step="3">04</button>
+    <button class="bnav-btn" data-step="4">05</button>
+    <button class="bnav-btn" data-step="5">06</button>
+    <button class="bnav-btn" data-step="6">07</button>
+  </nav>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
